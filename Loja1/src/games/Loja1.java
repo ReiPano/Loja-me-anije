@@ -63,7 +63,6 @@ public class Loja1 extends JPanel implements ActionListener,MouseMotionListener,
 	}
 	
 	private void initialize() throws IOException, UnsupportedAudioFileException, LineUnavailableException {
-		System.out.println("Muzkika "+muzika);
 		if(muzika==1){
 			clip.open(audioIn);
 			clip.loop(Clip.LOOP_CONTINUOUSLY);
@@ -74,12 +73,12 @@ public class Loja1 extends JPanel implements ActionListener,MouseMotionListener,
 			emrifiles="_medium";
 		else if(veshtiresia== 7)
 			emrifiles="_hard";
-		File file1= new File("C:\\Users\\rei\\Desktop\\media\\save"+emrifiles+".txt");
+		File file1= new File(vendi+"\\Desktop\\media\\save"+emrifiles+".txt");
 		if(!file1.exists()){
 			try {
-				File s1= new File("C:\\Users\\rei\\Desktop\\media\\save"+"_easy"+".txt");
-				File s2= new File("C:\\Users\\rei\\Desktop\\media\\save"+"_medium"+".txt");
-				File s3= new File("C:\\Users\\rei\\Desktop\\media\\save"+"_hard"+".txt");
+				File s1= new File(vendi+"\\Desktop\\media\\save"+"_easy"+".txt");
+				File s2= new File(vendi+"\\Desktop\\media\\save"+"_medium"+".txt");
+				File s3= new File(vendi+"\\Desktop\\media\\save"+"_hard"+".txt");
 				s1.createNewFile();
 				s2.createNewFile();
 				s3.createNewFile();
@@ -91,7 +90,7 @@ public class Loja1 extends JPanel implements ActionListener,MouseMotionListener,
 				e1.printStackTrace();
 			}
 		}
-		highScore= Load("C:\\Users\\rei\\Desktop\\media\\save"+emrifiles+".txt");
+		highScore= Load(vendi+"\\Desktop\\media\\save"+emrifiles+".txt");
 		tm.start();
 		
 		frame = new JFrame();
@@ -149,7 +148,6 @@ public class Loja1 extends JPanel implements ActionListener,MouseMotionListener,
 	
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
-		System.out.println(kape);
 		Font NewFont =new Font("Serif",Font.BOLD,20);
 		g.setFont(NewFont);
 		
@@ -203,7 +201,6 @@ public class Loja1 extends JPanel implements ActionListener,MouseMotionListener,
             area1.intersect(new Area(rrethi));
         
             if(!kat.isEmpty()){
-        	   System.out.println("joooo");
         	   do{
         	      kape=(int)(Math.random()*5);
         	      System.out.println(kape);
@@ -503,7 +500,7 @@ public class Loja1 extends JPanel implements ActionListener,MouseMotionListener,
 				kape=0;
 				kordx=4000;
 				kordy=4000;
-				veshtiresia= Load("C:\\Users\\rei\\Desktop\\media\\save1.txt");
+				veshtiresia= Load(vendi+"\\Desktop\\media\\save1.txt");
 				kohezgjatja--;
 		    }
 			

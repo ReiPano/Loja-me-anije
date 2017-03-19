@@ -28,7 +28,8 @@ import javax.swing.JMenuItem;
 
 
 public class MainMenu extends JPanel {
-
+	
+	String vendi=System.getProperty("user.home");
 	private static final long serialVersionUID = 1L;
 	private JFrame frmLoja;
 	String g , emri="Muzika";
@@ -55,11 +56,11 @@ public class MainMenu extends JPanel {
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void initialize() throws IOException {
-		File save= new File("C:\\Users\\rei\\Desktop\\media\\save1.txt");
+		File save= new File(vendi+"\\Desktop\\media\\save1.txt");
 		if(!save.exists()){
 			save.createNewFile();
 		}
-		File savemuzika= new File("C:\\Users\\rei\\Desktop\\media\\saveMuzika.txt");
+		File savemuzika= new File(vendi+"\\Desktop\\media\\saveMuzika.txt");
 		saveMuzika(0);
 		if(!savemuzika.exists()){
 			savemuzika.createNewFile();
